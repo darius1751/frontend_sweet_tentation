@@ -1,0 +1,58 @@
+.btn {
+    font-size: 1em;
+    font-weight: bold;
+    height: 2.5625em;
+    width: 10em;
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 0.4375em;
+    text-align: center;
+    padding: 0;
+    box-shadow: black 0.09375em 0.09375em 0.25em;
+}
+.btn_text{
+    display: inline-block;
+    text-align: center;
+    width: 5.5em;
+}
+.btn-clean{    
+    background-color: #42A4C3;
+}
+.btn-clean-icon{
+    font-size: 1.25em;
+    display: inline-block;
+}
+.btn-clean:hover{
+    background-color: #4fb3d1;
+}
+.btn-clean:active{
+    background-color: #42A4C3;
+}
+.btn-save{
+    background-color: #52C65D;
+}
+.btn-save-icon{
+    font-size: 1.5em;
+    vertical-align: super;
+    display: inline-block;
+}
+.btn-save:hover{
+    background-color: #5cd067;
+}
+.btn-save:active{
+    background-color: #52C65D;
+}
+.btn-delete{
+    background-color: #D32132;
+}
+.btn-delete-icon{
+    display: inline-block;
+    font-size: 1.5em;
+    vertical-align: super;
+}
+.btn-delete:hover{
+    background-color: #df2f41;
+}
+.btn-delete:active{
+    background-color: #D32132;
+}

@@ -1,3 +1,19 @@
+:root {
+    --main: #C2323F;
+    --danger: #D32132;
+    --clean: #42A4C3;
+    --reset: #25BEEC;
+    --save: #52C65D;
+    --preview: #CB46D7;
+
+    --main-opac: #d43d49;
+    --danger-opac: #DF2F41;
+    --clean-opac: #4FB3D1;
+    --reset-opac: #36C3EE;
+    --save-opac: #5CD067;
+    --preview-opac: #D64BE3;
+}
+
 .btn {
     font-size: 1em;
     font-weight: bold;
@@ -10,49 +26,170 @@
     padding: 0;
     box-shadow: black 0.09375em 0.09375em 0.25em;
 }
-.btn_text{
+
+.btn_text {
     display: inline-block;
     text-align: center;
-    width: 5.5em;
+    width: 6.5em;
 }
-.btn-clean{    
+
+.btn:disabled {
+    cursor: default;
+}
+
+.btn-clean {
     background-color: #42A4C3;
 }
-.btn-clean-icon{
+
+.btn-clean-icon {
     font-size: 1.25em;
     display: inline-block;
 }
-.btn-clean:hover{
+
+.btn-clean:hover {
     background-color: #4fb3d1;
 }
-.btn-clean:active{
+
+.btn-clean:active {
     background-color: #42A4C3;
 }
-.btn-save{
-    background-color: #52C65D;
+
+.btn-clean:disabled {
+    background-color: #4fb3d1;
 }
-.btn-save-icon{
+
+.btn-save {
+    background-color: var(--save);
+}
+
+.btn-save-icon {
     font-size: 1.5em;
     vertical-align: super;
     display: inline-block;
 }
-.btn-save:hover{
-    background-color: #5cd067;
+
+.btn-save:hover {
+    background-color: var(--save-opac);
 }
-.btn-save:active{
-    background-color: #52C65D;
+
+.btn-save:active {
+    background-color: var(--save);
 }
-.btn-delete{
-    background-color: #D32132;
+
+.btn-save:disabled {
+    background-color: var(--save-opac);
 }
-.btn-delete-icon{
+
+.btn-danger {
+    background-color: var(--danger);
+}
+
+.btn-delete-icon {
     display: inline-block;
     font-size: 1.5em;
     vertical-align: super;
 }
-.btn-delete:hover{
-    background-color: #df2f41;
+
+.btn-danger:hover {
+    background-color: var(--danger-opac);
 }
-.btn-delete:active{
-    background-color: #D32132;
+
+.btn-danger:active {
+    background-color: var(--danger);
+}
+
+.btn-danger:disabled {
+    background-color: var(--danger-opac);
+}
+
+.btn-reset {
+    background-color: var(--reset);
+}
+
+.btn-reset-icon {
+    display: inline-block;
+    font-size: 1.7em;
+    vertical-align: bottom;
+}
+
+.btn-reset:hover {
+    background-color: var(--reset-opac);
+}
+
+.btn-reset:active {
+    background-color: var(--reset);
+}
+
+.btn-reset:disabled {
+    background-color: var(--reset-opac);
+    cursor: default;
+}
+
+.btn-cancel-icon {
+    display: inline-block;
+    font-size: 1.5em;
+    vertical-align: middle;
+}
+
+.btn-close-view-icon {
+    display: inline-block;
+    font-size: 1.5em;
+    vertical-align: super;
+}
+
+.btn-main {
+    background-color: var(--main);
+}
+
+.btn-main:hover {
+    background-color: var(--main-opac);
+}
+
+.btn-main:active {
+    background-color: var(--main);
+}
+
+.btn-main:disabled {
+    background-color: var(--main-opac);
+}
+
+.btn-send-icon {
+    display: inline-block;
+    font-size: 1.5em;
+    vertical-align: middle;
+}
+
+.btn-pay-icon {
+    display: inline-block;
+    font-size: 1.8em;
+    vertical-align: middle;
+    margin-right: 0.25em;
+}
+
+.btn-preview {
+    background-color: var(--preview);
+}
+
+.btn-preview:hover {
+    background-color: var(--preview-opac);
+}
+
+.btn-preview:active {
+    background-color: var(--preview);
+}
+
+.btn-preview:disabled {
+    background-color: var(--preview-opac);
+}
+
+.btn-preview-icon {
+    display: inline-block;
+    font-size: 1.8em;
+    vertical-align: middle;
+}
+
+.btn-add-to-cart-icon{
+    display: inline-block;
+    font-size: 1.7em;
+    vertical-align: bottom;
 }

@@ -1,0 +1,65 @@
+.field-input {
+    display: inline-block;
+}
+
+.input {
+    height: 2.0625em;
+    border: 0.1875em solid gray;
+    border-radius: 0.4375em;
+}
+
+.input::placeholder {
+    font-weight: bold;
+}
+
+.input-label {
+    display: block;
+    width: inherit;
+    margin-bottom: 0.1875em;
+    font-weight: bold;
+}
+
+.input-sm {
+    width: 13.9375em;
+}
+
+.input-md {
+    width: 16.3125em;
+}
+
+.input-lg {
+    width: 21.3125em;
+}
+
+.input-search {
+    height: 3.0625em;
+    width: 100%;
+    text-indent: 2.5em;
+}
+
+.input-search-icon {
+    position: relative;
+    font-size: 1.5em;
+    top: 33px;
+    left: 10px;
+}
+
+.input-search::-webkit-search-cancel-button {
+    font-size: 1.5em;
+    font-family: sans-serif;
+    color: gray;
+    cursor: pointer;
+}
+
+.input-area {
+    width: 26.1875em;
+    height: 8.375em;
+    /* resize: none; */
+    resize: vertical;
+}
+
+@media screen and (max-width: 465px) {
+    .input-area {
+        width: 21.3125em;
+    }
+}

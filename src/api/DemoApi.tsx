@@ -3,7 +3,9 @@ import { Input } from "./components/inputs/Input";
 import { Form } from "./components/forms/form";
 import './style.css';
 import { Container } from "./components/Container";
+import { useForm } from "./hooks/useForm";
 export const DemoApi = () => {
+    const [onChange, { name, email, phone }] = useForm({ name: '', email: '', phone: '' });
     return (
         <Container>
             <h2>Buttons</h2>
@@ -46,11 +48,11 @@ export const DemoApi = () => {
             <Form.Sm onSubmit={(e) => { e.preventDefault(); }} >
                 <h3 style={{ textAlign: 'justify', width: '90%', margin: '0 auto' }}>Llene el formulario, para recibir mas notificaciones sobre ofertas y nuevos productos</h3>
                 <br /><br />
-                <Input.Sm label="Nombre" name="smallInput" placerholder="Ingrese un dato" type="text" />
+                <Input.Sm label="Nombre" name="name" placerholder="Ingrese un dato" type="text" value={name} onChange={onChange} />
                 <br /><br />
-                <Input.Sm label="Email" name="smallInput2" placerholder="Ingrese un dato" type="text" />
+                <Input.Sm label="Email" name="email" placerholder="Ingrese un dato" type="text" value={email} onChange={onChange} />
                 <br /><br />
-                <Input.Sm label="Telefono" name="smallInput2" placerholder="Ingrese un dato" type="text" />
+                <Input.Sm label="Telefono" name="phone" placerholder="Ingrese un dato" type="text" value={phone} onChange={onChange} />
                 <br /><br />
 
                 <Button.Send />

@@ -25,6 +25,8 @@
     text-align: center;
     padding: 0;
     box-shadow: black 0.09375em 0.09375em 0.25em;
+    /* box-shadow: black 0.09375em 0.1875em 0.5em; */
+    
 }
 
 .btn_text {
@@ -38,7 +40,8 @@
 }
 
 .btn-clean {
-    background-color: #42A4C3;
+    background-color: var(--clean);
+    border: 2.5px solid var(--clean-opac);
 }
 
 .btn-clean-icon {
@@ -47,19 +50,20 @@
 }
 
 .btn-clean:hover {
-    background-color: #4fb3d1;
+    background-color: var(--clean-opac);
 }
 
 .btn-clean:active {
-    background-color: #42A4C3;
+    background-color: var(--clean);
 }
 
 .btn-clean:disabled {
-    background-color: #4fb3d1;
+    background-color: var(--clean-opac);
 }
 
 .btn-save {
     background-color: var(--save);
+    border: 2.5px solid var(--save-opac);
 }
 
 .btn-save-icon {
@@ -82,6 +86,7 @@
 
 .btn-danger {
     background-color: var(--danger);
+    border: 2.5px solid var(--danger-opac);
 }
 
 .btn-delete-icon {
@@ -104,6 +109,7 @@
 
 .btn-reset {
     background-color: var(--reset);
+    border: 2.5px solid var(--reset-opac);
 }
 
 .btn-reset-icon {
@@ -139,6 +145,7 @@
 
 .btn-main {
     background-color: var(--main);
+    border: 2.5px solid var(--main-opac);
 }
 
 .btn-main:hover {
@@ -168,6 +175,7 @@
 
 .btn-preview {
     background-color: var(--preview);
+    border: 2.5px solid var(--preview-opac);
 }
 
 .btn-preview:hover {
@@ -188,7 +196,7 @@
     vertical-align: middle;
 }
 
-.btn-add-to-cart-icon{
+.btn-add-to-cart-icon {
     display: inline-block;
     font-size: 1.7em;
     vertical-align: bottom;

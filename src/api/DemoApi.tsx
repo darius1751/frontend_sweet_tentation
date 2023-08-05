@@ -1,10 +1,11 @@
 import { Button } from "./components/buttons/Button"
 import { Input } from "./components/inputs/Input";
+import { Form } from "./components/forms/form";
 import './style.css';
+import { Container } from "./components/Container";
 export const DemoApi = () => {
     return (
-        <div className="container">
-
+        <Container>
             <h2>Buttons</h2>
             <Button.Clean />
             <br />
@@ -41,7 +42,30 @@ export const DemoApi = () => {
             <Input.Lg label="Input Large with password" name="large" placerholder="Ingrese un dato" type="password" />
             <br /><br />
             <Input.TextArea label="Detalles" name="detail" maxLength={500} placerholder="Ingrese el detalle" />
+            <br /><br />
+            <Form.Sm onSubmit={(e) => { e.preventDefault(); }} >
+                <h3 style={{ textAlign: 'justify', width: '90%', margin: '0 auto' }}>Llene el formulario, para recibir mas notificaciones sobre ofertas y nuevos productos</h3>
+                <br /><br />
+                <Input.Sm label="Nombre" name="smallInput" placerholder="Ingrese un dato" type="text" />
+                <br /><br />
+                <Input.Sm label="Email" name="smallInput2" placerholder="Ingrese un dato" type="text" />
+                <br /><br />
+                <Input.Sm label="Telefono" name="smallInput2" placerholder="Ingrese un dato" type="text" />
+                <br /><br />
+
+                <Button.Send />
+            </Form.Sm>
+            <br /><br /><br />
+            <Form.Lg onSubmit={(e) => { e.preventDefault(); }} >
+                <Input.Lg label="Nombre" name="smallInput" placerholder="Ingrese un dato" type="text" />
+                <br /><br />
+                <Input.Lg label="Email" name="smallInput2" placerholder="Ingrese un dato" type="text" />
+                <br /><br />
+                <Input.Lg label="Telefono" name="smallInput2" placerholder="Ingrese un dato" type="text" />
+                <br /><br />
+                <Button.Send />
+            </Form.Lg>
             <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-        </div>
+        </Container>
     )
 }

@@ -3,7 +3,7 @@
 }
 
 .input {
-    height: 2.0625em;
+    height: 2.5625em;
     border: 0.1875em solid gray;
     border-radius: 0.4375em;
 }
@@ -13,6 +13,7 @@
 }
 
 .input-label {
+    text-align: left;
     display: block;
     width: inherit;
     margin-bottom: 0.1875em;

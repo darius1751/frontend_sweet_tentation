@@ -23,7 +23,7 @@ export const ImageLoad = ({ image, name, setImage, setFile }: PropsImageLoad) =>
     return (
         <article className="input input-image input-image-load" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
             <img src={image} />
-            {visibleOptions && <ImageOptions setImage={setImage} onEditImage={onEditImage} />}
+            {visibleOptions && <ImageOptions setFile={setFile} setImage={setImage} onEditImage={onEditImage} />}
             <input type="file" name={name} ref={$inputFile} hidden onChange={onChange} />
         </article>
     )

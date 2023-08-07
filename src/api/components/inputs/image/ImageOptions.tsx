@@ -2,13 +2,14 @@ import { faEye, faPen, faTrashCan } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { PropsImageOptions } from "./propsInputImage";
 
-export const ImageOptions = ({ setImage, onEditImage }: PropsImageOptions) => {
+export const ImageOptions = ({ setFile, setImage, onEditImage }: PropsImageOptions) => {
     const onDeleteImage = () => {
         setImage("");
+        setFile(undefined);
     }
     const onViewImage = () => {
 
-    }   
+    }
 
     return (
         <article className="input-image-options">

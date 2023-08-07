@@ -16,7 +16,9 @@ export interface PropsImageUpload {
 export interface PropsAddImageIcon {
     className?: string;
 }
+
 export interface PropsImageOptions {
     setImage: React.Dispatch<React.SetStateAction<string>>;
+    setFile: React.Dispatch<React.SetStateAction<File | undefined>>;
     onEditImage: (e: MouseEvent) => void;
 }

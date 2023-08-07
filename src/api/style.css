@@ -132,13 +132,19 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+
+img {
+    max-width: 100%;
+}
+
 :root {
     z-index: 1;
     font-size: 16px;
     font-family: sans-serif;
     box-sizing: border-box;
 }
-.container{
+
+.container {
     width: 80%;
     max-width: 960px;
     margin: 0 auto;

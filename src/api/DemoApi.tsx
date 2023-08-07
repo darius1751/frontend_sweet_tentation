@@ -6,6 +6,9 @@ import { Container } from "./components/Container";
 import { useForm } from "./hooks/useForm";
 export const DemoApi = () => {
     const [onChange, { name, email, phone }] = useForm({ name: '', email: '', phone: '' });
+    const saveInfo = () => {
+        
+    }
     return (
         <Container>
             <h2>Buttons</h2>
@@ -61,11 +64,18 @@ export const DemoApi = () => {
             <Form.Lg onSubmit={(e) => { e.preventDefault(); }} >
                 <Input.Lg label="Nombre" name="smallInput" placerholder="Ingrese un dato" type="text" />
                 <br /><br />
+                <Input.Image name="mainImage" />
+                <br /><br />
                 <Input.Lg label="Email" name="smallInput2" placerholder="Ingrese un dato" type="text" />
                 <br /><br />
                 <Input.Lg label="Telefono" name="smallInput2" placerholder="Ingrese un dato" type="text" />
                 <br /><br />
-                <Button.Send />
+                <Input.Image name="image1" />
+                <br /><br />
+                <Input.Lg label="Telefono" name="smallInput2" placerholder="Ingrese un dato" type="text" />
+                <br /><br />
+                <Button.Send onClick={saveInfo} />
+
             </Form.Lg>
             <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
         </Container>

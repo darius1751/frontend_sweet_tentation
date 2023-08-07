@@ -4,10 +4,16 @@ import { Form } from "./components/forms/form";
 import './style.css';
 import { Container } from "./components/Container";
 import { useForm } from "./hooks/useForm";
+import { FormEvent, useState } from "react";
 export const DemoApi = () => {
     const [onChange, { name, email, phone }] = useForm({ name: '', email: '', phone: '' });
-    const saveInfo = () => {
-        
+    const [mainImage, setMainImage] = useState<File>();
+    const [image1, setImage1] = useState<File>();
+    const saveInfo = (e: FormEvent) => {
+        e.preventDefault();
+        console.log({ mainImage, image1 });
+
+
     }
     return (
         <Container>
@@ -61,21 +67,20 @@ export const DemoApi = () => {
                 <Button.Send />
             </Form.Sm>
             <br /><br /><br />
-            <Form.Lg onSubmit={(e) => { e.preventDefault(); }} >
+            <Form.Lg onSubmit={saveInfo} >
                 <Input.Lg label="Nombre" name="smallInput" placerholder="Ingrese un dato" type="text" />
                 <br /><br />
-                <Input.Image name="mainImage" />
+                <Input.Image name="mainImage" setFile={setMainImage} />
                 <br /><br />
                 <Input.Lg label="Email" name="smallInput2" placerholder="Ingrese un dato" type="text" />
                 <br /><br />
                 <Input.Lg label="Telefono" name="smallInput2" placerholder="Ingrese un dato" type="text" />
                 <br /><br />
-                <Input.Image name="image1" />
+                <Input.Image name="image1" setFile={setImage1} />
                 <br /><br />
                 <Input.Lg label="Telefono" name="smallInput2" placerholder="Ingrese un dato" type="text" />
                 <br /><br />
-                <Button.Send onClick={saveInfo} />
-
+                <Button.Send />
             </Form.Lg>
             <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
         </Container>

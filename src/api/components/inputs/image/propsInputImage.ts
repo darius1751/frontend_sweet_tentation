@@ -1,7 +1,8 @@
 import { MouseEvent } from "react";
 
 export interface PropsInputImage {
-    name: string;    
+    name: string;
+    setFile: React.Dispatch<React.SetStateAction<File | undefined>>
 }
 export interface PropsImageLoad extends PropsImageUpload {
     image: string;

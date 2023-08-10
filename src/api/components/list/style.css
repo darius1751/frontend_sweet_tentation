@@ -1,0 +1,37 @@
+.select-multiple {
+    cursor: pointer;
+    box-shadow: 3px 3px 3px black;
+}
+
+.select-multiple-placeholder {
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    margin-top: 0.6875em;
+}
+
+.select-multiple-options {
+    position: absolute;
+    border: 0.0625em solid black;
+    border-radius: 7px;
+    height: 14em;
+    overflow-y: auto;
+    width: 21.3125em;
+    background-color: whitesmoke;
+    
+}
+
+.select-multiple-option{
+    cursor: pointer;
+    margin: 0.625em 1.25em;
+    border-bottom: 0.0625em solid black;
+    height: 2em;
+}
+
+.select-multiple-option-icon{
+    font-size: 1.5em;
+}
+
+.select-multiple-option:hover{
+    background-color: #b0a4a4;
+}

@@ -1,20 +1,37 @@
+import { FormEvent, useState } from "react";
 import { Button } from "./components/buttons/Button"
 import { Input } from "./components/inputs/Input";
 import { Form } from "./components/forms/form";
-import './style.css';
 import { Container } from "./components/Container";
 import { useForm } from "./hooks/useForm";
-import { FormEvent, useState } from "react";
+import { List } from "./components/list/List";
+import './style.css';
 export const DemoApi = () => {
     const [onChange, { name, email, phone }] = useForm({ name: '', email: '', phone: '' });
     const [mainImage, setMainImage] = useState<File>();
     const [image1, setImage1] = useState<File>();
+    const [categories, setCategories] = useState<string[]>([]);
     const saveInfo = (e: FormEvent) => {
         e.preventDefault();
         console.log({ mainImage, image1 });
-
-
     }
+    const list = [
+        { text: "Option 1", value: 1 },
+        { text: "Option 2", value: 2 },
+        { text: "Option 3", value: 3 },
+        { text: "Option 4", value: 4 },
+        { text: "Option 5", value: 5 },
+        { text: "Option 6", value: 6 },
+        { text: "Option 7", value: 7 },
+        { text: "Option 8", value: 8 },
+        { text: "Option 9", value: 9 },
+        { text: "Option 10", value: 10 },
+        { text: "Option 11", value: 11 },
+        { text: "Option 12", value: 12 },
+        { text: "Option 13", value: 13 },
+        { text: "Option 14", value: 14 },
+        { text: "Option 15", value: 15 },
+    ];
     return (
         <Container>
             <h2>Buttons</h2>
@@ -82,7 +99,11 @@ export const DemoApi = () => {
                 <br /><br />
                 <Button.Send />
             </Form.Lg>
-            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+            <br /><br />
+            <List.SelectMultiple list={list} label="Categorias" placeholder="Seleccione las categorias" values={categories} setValues={setCategories} />
+            <br />
+            <Button.Send />
+            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
         </Container>
     )
 }

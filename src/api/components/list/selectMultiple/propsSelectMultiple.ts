@@ -1,3 +1,5 @@
+import { ChangeEvent } from "react";
+
 export interface List {
     value: string | number;
     text: string;
@@ -19,4 +21,12 @@ export interface PropsItem {
     value: string | number;
     values: any[];
     setValues: React.Dispatch<React.SetStateAction<string[]>> | React.Dispatch<React.SetStateAction<number[]>>;
+}
+
+export interface PropsSelect {
+    label: string;
+    name: string;
+    list: List[];
+    value: string | number;
+    onChange: (e: ChangeEvent<any>) => void;
 }

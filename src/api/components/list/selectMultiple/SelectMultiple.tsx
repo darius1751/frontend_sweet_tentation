@@ -9,7 +9,7 @@ export const SelectMultiple = ({ list, label, values, setValues, placeholder }: 
     return (
         <section className="field-input">
             <label className="input-label">{label}</label>
-            <section className="input input-lg select-multiple" onClick={onClick}>
+            <section className="input input-lg select" onClick={onClick}>
                 <span className="select-multiple-placeholder">{!values.length ? placeholder : `Valores seleccionados: ${values}`}</span>
             </section>
             {open && <List list={list} values={values} setValues={setValues} />}

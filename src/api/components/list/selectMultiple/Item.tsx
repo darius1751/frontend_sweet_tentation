@@ -21,7 +21,7 @@ export const Item = ({ value, text, values, setValues }: PropsItem) => {
     }
     return (
         <article data-value={value} onClick={onClick} className="select-multiple-option">
-            {check ? <FontAwesomeIcon icon={faSquareCheck} className="select-multiple-option-icon" /> : <FontAwesomeIcon icon={faSquareUnCheck} className="select-multiple-option-icon" />} <span>{text}</span>
+            {check ? <FontAwesomeIcon icon={faSquareCheck} className="select-multiple-option-icon select-multiple-option-check-icon" /> : <FontAwesomeIcon icon={faSquareUnCheck} className="select-multiple-option-icon" />} <span>{text}</span>
         </article>
     )
 }

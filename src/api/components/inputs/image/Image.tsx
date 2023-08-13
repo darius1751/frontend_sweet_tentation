@@ -9,7 +9,6 @@ export const Image = ({ name, setFile }: PropsInputImage) => {
     return (
         <section className="field-input">
             {image ? <ImageLoad setImage={setImage} image={image} name={name} setFile={setFile} /> : <ImageUpload setImage={setImage} name={name} setFile={setFile} />}
-            {/* file={file!} */}
         </section>
     )
 }

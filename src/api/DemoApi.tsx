@@ -7,7 +7,7 @@ import { useForm } from "./hooks/useForm";
 import { List } from "./components/list/List";
 import './style.css';
 export const DemoApi = () => {
-    const [onChange, { name, email, phone }] = useForm({ name: '', email: '', phone: '' });
+    const [onChange, { name, email, phone, selectCommon }] = useForm({ name: '', email: '', phone: '', selectCommon: 0 });
     const [mainImage, setMainImage] = useState<File>();
     const [image1, setImage1] = useState<File>();
     const [categories, setCategories] = useState<string[]>([]);
@@ -80,7 +80,6 @@ export const DemoApi = () => {
                 <br /><br />
                 <Input.Sm label="Telefono" name="phone" placerholder="Ingrese un dato" type="text" value={phone} onChange={onChange} />
                 <br /><br />
-
                 <Button.Send />
             </Form.Sm>
             <br /><br /><br />
@@ -102,8 +101,12 @@ export const DemoApi = () => {
             <br /><br />
             <List.SelectMultiple list={list} label="Categorias" placeholder="Seleccione las categorias" values={categories} setValues={setCategories} />
             <br />
+            <br />
+            <List.Select list={list} label="Select Comun" name="selectCommon" onChange={onChange} value={selectCommon} />
+            <br />
+            <br />
             <Button.Send />
-            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
         </Container>
     )
 }

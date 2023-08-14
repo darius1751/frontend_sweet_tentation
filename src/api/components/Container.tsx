@@ -1,5 +1,7 @@
+import { ReactNode } from "react"
+
 export interface PropsContainer {
-    children: React.JSX.Element[];
+    children: ReactNode
 }
 export const Container = ({ children }: PropsContainer) => {
     return (

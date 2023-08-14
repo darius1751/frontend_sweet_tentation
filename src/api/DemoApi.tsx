@@ -5,8 +5,10 @@ import { Form } from "./components/forms/form";
 import { Container } from "./components/Container";
 import { useForm } from "./hooks/useForm";
 import { List } from "./components/list/List";
+import { Modal } from "./components/modals/Modal";
 import './style.css';
 export const DemoApi = () => {
+    const [openModal, setOpenModal] = useState<boolean>(false);
     const [onChange, { name, email, phone, selectCommon }] = useForm({ name: '', email: '', phone: '', selectCommon: 0 });
     const [mainImage, setMainImage] = useState<File>();
     const [image1, setImage1] = useState<File>();
@@ -15,6 +17,13 @@ export const DemoApi = () => {
         e.preventDefault();
         console.log({ mainImage, image1 });
     }
+    const closeModal = () => setOpenModal(false);
+
+    const onSubmitModal = (e: FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        console.log("Gracias por llenar el formulario");
+        closeModal();
+    };
     const list = [
         { text: "Option 1", value: 1 },
         { text: "Option 2", value: 2 },
@@ -58,6 +67,8 @@ export const DemoApi = () => {
             <Button.Preview />
             <br /><br />
             <Button.AddToCart />
+            <br /><br />
+            <Button.Accept />
             <br /><br />
             <h2>Inputs</h2>
             <br /><br />
@@ -106,6 +117,41 @@ export const DemoApi = () => {
             <br />
             <br />
             <Button.Send />
+            <Button.Preview onClick={() => setOpenModal(true)} text="Abrir modal"/>
+            {/* {openModal && <Modal.Success close={closeModal} message="Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas" title="Prueba 1 Modal" />} */}
+            {/* <Modal.Info close={closeModal}message="Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas" title="Prueba 1 Modal"/> */}
+            {/* <Modal.Warn message="Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas" title="Prueba 1 Modal"/> */}
+            {/* <Modal.Error message="Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas" title="Prueba 1 Modal"/> */}
+
+            {openModal && <Modal.Form> <Form.Sm onSubmit={onSubmitModal} >
+                <h3 style={{ textAlign: 'justify', width: '90%', margin: '0 auto' }}>Llene el formulario, para recibir mas notificaciones sobre ofertas y nuevos productos</h3>
+                <br /><br />
+                <Input.Sm label="Nombre" name="name" placerholder="Ingrese un dato" type="text" value={name} onChange={onChange} />
+                <br /><br />
+                <Input.Sm label="Email" name="email" placerholder="Ingrese un dato" type="text" value={email} onChange={onChange} />
+                <br /><br />
+                <Input.Sm label="Telefono" name="phone" placerholder="Ingrese un dato" type="text" value={phone} onChange={onChange} />
+                <br /><br />
+                <Button.Send />
+            </Form.Sm>
+            </Modal.Form>}
+            {/* {openModal && <Modal.Form>
+                <Form.Lg onSubmit={saveInfo} >
+                    <Input.Lg label="Nombre" name="smallInput" placerholder="Ingrese un dato" type="text" />
+                    <br /><br />
+                    <Input.Image name="mainImage" setFile={setMainImage} />
+                    <br /><br />
+                    <Input.Lg label="Email" name="smallInput2" placerholder="Ingrese un dato" type="text" />
+                    <br /><br />
+                    <Input.Lg label="Telefono" name="smallInput2" placerholder="Ingrese un dato" type="text" />
+                    <br /><br />
+                    <Input.Image name="image1" setFile={setImage1} />
+                    <br /><br />
+                    <Input.Lg label="Telefono" name="smallInput2" placerholder="Ingrese un dato" type="text" />
+                    <br /><br />
+                    <Button.Send />
+                </Form.Lg>
+            </Modal.Form>} */}
             <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
         </Container>
     )

@@ -2,7 +2,6 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-
 html,
 body,
 div,
@@ -149,3 +148,9 @@ img {
     max-width: 960px;
     margin: 0 auto;
 }
+/*Import styles components*/
+@import url('./components/buttons/style.css');
+@import url('./components/forms/style.css');
+@import url('./components/inputs/style.css');
+@import url('./components/list/style.css');
+@import url('./components/modals/style.css');

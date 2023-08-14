@@ -1,6 +1,6 @@
 import { SelectMultiple } from "./selectMultiple/SelectMultiple";
 import { Select } from "./Select";
-import './style.css';
+// import './style.css';
 export const List = Object.freeze({
     SelectMultiple,
     Select,

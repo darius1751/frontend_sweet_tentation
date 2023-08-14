@@ -9,7 +9,7 @@ import { Pay } from './Pay';
 import { Preview } from './Preview';
 import { AddToCart } from './AddToCart';
 import { Accept } from './Accept';
-import './style.css';
+// import './style.css';
 export const Button = Object.freeze({
     Clean,
     Save,

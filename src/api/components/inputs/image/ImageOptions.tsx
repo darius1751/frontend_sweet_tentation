@@ -18,7 +18,6 @@ export const ImageOptions = ({ setFile, setImage, onEditImage }: PropsImageOptio
                 <FontAwesomeIcon icon={faEye} className="input-image-option-action" onClick={onViewImage} />
                 <FontAwesomeIcon icon={faPen} className="input-image-option-action" onClick={onEditImage} />
             </article>
-
         </article>
     )
 }

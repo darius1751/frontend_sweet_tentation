@@ -8,6 +8,7 @@ import { Send } from './Send';
 import { Pay } from './Pay';
 import { Preview } from './Preview';
 import { AddToCart } from './AddToCart';
+import { Accept } from './Accept';
 import './style.css';
 export const Button = Object.freeze({
     Clean,
@@ -19,5 +20,6 @@ export const Button = Object.freeze({
     Send,
     Pay,
     Preview,
-    AddToCart
+    AddToCart,
+    Accept
 });

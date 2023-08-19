@@ -1,7 +1,7 @@
 import { ChangeEvent, useRef } from "react";
 import { PropsImageUpload } from "./propsInputImage"
 import { AddImageIcon } from "./addImageIcon";
-import { validateImageFile } from "../../utils/validateImageFile";
+import { validateImageFile } from "../../../utils/validateImageFile";
 export const ImageUpload = ({ setImage, setFile, name }: PropsImageUpload) => {
     const $inputFile = useRef<HTMLInputElement>(null);
     const onClick = () => {

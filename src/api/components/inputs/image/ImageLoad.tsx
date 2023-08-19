@@ -1,7 +1,7 @@
 import { ChangeEvent, useRef, useState } from "react";
 import { PropsImageLoad } from "./propsInputImage"
 import { ImageOptions } from "./ImageOptions";
-import { validateImageFile } from "../../utils/validateImageFile";
+import { validateImageFile } from "../../../utils/validateImageFile";
 
 export const ImageLoad = ({ image, name, setImage, setFile }: PropsImageLoad) => {
     const $inputFile = useRef<HTMLInputElement>(null);

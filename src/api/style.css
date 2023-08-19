@@ -3,11 +3,13 @@
    License: none (public domain)
 */
 /*Import styles components*/
+@import url('../api/variables.css');
 @import url('./components/buttons/style.css');
 @import url('./components/forms/style.css');
 @import url('./components/inputs/style.css');
 @import url('./components/list/style.css');
 @import url('./components/modals/style.css');
+@import url('./components/nav_bar/style.css');
 html,
 body,
 div,

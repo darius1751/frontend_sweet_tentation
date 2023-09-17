@@ -1,7 +1,7 @@
 import { Observable } from "rxjs";
 import { AjaxResponse, ajax } from "rxjs/ajax";
 
-export class HttpService {
+class HttpService {
 
     public getJson<T>(url: string, headers?: Record<string, string>): Observable<T> {
         return ajax.getJSON<T>(url, headers);
@@ -12,18 +12,19 @@ export class HttpService {
     }
 
     public post<T>(url: string, body: any, headers?: Record<string, string>): Observable<AjaxResponse<T>> {
-        return ajax.post(url, body, headers);
+        return ajax.post<T>(url, body, headers);
     }
 
     public patch<T>(url: string, body: any, headers?: Record<string, string>): Observable<AjaxResponse<T>> {
-        return ajax.patch(url, body, headers);
+        return ajax.patch<T>(url, body, headers);
     }
 
     public put<T>(url: string, body: any, headers?: Record<string, string>): Observable<AjaxResponse<T>> {
-        return ajax.put(url, body, headers);
+        return ajax.put<T>(url, body, headers);
     }
 
     public delete<T>(url: string, headers: Record<string, string>): Observable<AjaxResponse<T>> {
-        return ajax.delete(url, headers);
+        return ajax.delete<T>(url, headers);
     }
 }
+export const httpService: HttpService = new HttpService();

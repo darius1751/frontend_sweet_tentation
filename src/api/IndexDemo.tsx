@@ -9,7 +9,6 @@ import { useForm } from "./hooks/useForm";
 import { List } from "./components/list/List";
 import { Modal } from "./components/modals/Modal";
 import { NavBar } from "./components/nav_bar/NavBar";
-
 import logo from '../assets/Logo.png';
 import './style.css';
 export const IndexDemo = () => {
@@ -60,7 +59,7 @@ export const IndexDemo = () => {
                 navLinksLast={[
                     { text: "Iniciar sesion", url: 'login' },
                     { text: "Registrar", url: 'register' },
-                    { text: <FontAwesomeIcon icon={faCartShopping} />, url: "cart" },                    
+                    { text: <FontAwesomeIcon icon={faCartShopping} />, url: "cart" },
                 ]} />
             <Container>
                 <h2>Buttons</h2>

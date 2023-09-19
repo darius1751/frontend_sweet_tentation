@@ -1,4 +1,14 @@
 import { ChangeEvent } from "react";
+export interface ValidatorMessage {
+    id:number;
+    message: string;
+    valid: boolean;
+}
+export interface ValidatorInput {
+    messageOnError: string;
+    messageOnSuccess: string;
+    validation: (e: ChangeEvent<HTMLInputElement>) => boolean;
+}
 
 export interface PropsInput {
     label: string;
@@ -8,6 +18,7 @@ export interface PropsInput {
     name: string;
     value?: string | number | readonly string[];
     type?: "text" | "password" | "email" | "date" | "datetime-local" | "number" | "time" | "url" | "week";
+    validators?: ValidatorInput[];
 }
 
 export interface PropsInputSearch {

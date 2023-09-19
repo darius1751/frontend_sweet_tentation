@@ -145,9 +145,40 @@ export const IndexDemo = () => {
                 {openModal && <Modal.Form> <Form.Sm onSubmit={onSubmitModal} >
                     <h3 style={{ textAlign: 'justify', width: '90%', margin: '0 auto' }}>Llene el formulario, para recibir mas notificaciones sobre ofertas y nuevos productos</h3>
                     <br /><br />
-                    <Input.Sm label="Nombre" name="name" placerholder="Ingrese un dato" type="text" value={name} onChange={onChange} />
+                    <Input.Sm
+                        label="Nombre"
+                        name="name"
+                        placerholder="Ingrese un dato"
+                        type="text"
+                        value={name}
+                        onChange={onChange}
+                        validators={[
+                            {
+                                messageOnError: 'Error',
+                                messageOnSuccess: 'Correct',
+                                validation: (e) => {
+                                    return e.target.value == "Luis";
+                                }
+                            }
+                        ]}
+                    />
                     <br /><br />
-                    <Input.Sm label="Email" name="email" placerholder="Ingrese un dato" type="text" value={email} onChange={onChange} />
+                    <Input.Sm
+                        label="Email"
+                        name="email"
+                        placerholder="Ingrese un dato"
+                        type="text"
+                        value={email}
+                        onChange={onChange}
+                        validators={[
+                            {
+                                messageOnError: 'Error',
+                                messageOnSuccess: 'Correct',
+                                validation: (e) => {
+                                    return e.target.value == "lupequi12@gmail.com";
+                                }
+                            }
+                        ]} />
                     <br /><br />
                     <Input.Sm label="Telefono" name="phone" placerholder="Ingrese un dato" type="text" value={phone} onChange={onChange} />
                     <br /><br />

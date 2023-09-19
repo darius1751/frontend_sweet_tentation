@@ -1,19 +1,21 @@
 import { ChangeEvent } from "react";
 
-export interface List {
+export interface Item {
     value: string | number;
     text: string;
 }
 export interface PropsList {
-    list: List[];
+    list: Item[];
     values: string[] | number[];
     setValues: React.Dispatch<React.SetStateAction<string[]>> | React.Dispatch<React.SetStateAction<number[]>>;
 }
 export interface PropsSelectMultiple {
-    list: List[];
+    list: Item[];
     label: string;
     placeholder: string;
     values: string[] | number[];
+    classNameField?: string;
+    classNameInput?: string;
     setValues: React.Dispatch<React.SetStateAction<string[]>> | React.Dispatch<React.SetStateAction<number[]>>;
 }
 export interface PropsItem {
@@ -26,7 +28,7 @@ export interface PropsItem {
 export interface PropsSelect {
     label: string;
     name: string;
-    list: List[];
+    list: Item[];
     value: string | number;
     onChange: (e: ChangeEvent<any>) => void;
 }

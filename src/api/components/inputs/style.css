@@ -64,6 +64,7 @@
     height: 20.0625em;
     border-radius: 0.4375em;
     cursor: pointer;
+    text-align: left;
 }
 
 .input-image-load>img {

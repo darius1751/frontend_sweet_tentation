@@ -1,0 +1,43 @@
+.add-sweet_input,
+.add-sweet_input-rg,
+.add-sweet_main-image {
+    margin-bottom: 20px;
+}
+
+
+.add-sweet_input-rg {
+    float: right;
+}
+
+.add-sweet_main-image {
+    text-align: center;
+}
+
+.additional-images {
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+}
+.additional-images-form{
+    border: 1px solid black;
+}
+.additional-images-form-add{
+    text-decoration: underline;
+    cursor: pointer;
+    color: var(--main);
+}
+.row {
+    box-sizing: border-box;
+    width: 100%;
+    display: inline-block;
+}
+@media screen and (max-width: 567px) {
+    .add-sweet_input-rg{
+        float: none;
+    }
+}
+@media screen and (max-width:600px){
+    .add-sweet{
+        text-align: center;
+    }
+}

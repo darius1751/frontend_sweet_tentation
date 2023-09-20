@@ -5,6 +5,9 @@ import { Input } from "../../../api/components/inputs/Input"
 import { useForm } from "../../../api/hooks/useForm"
 import { Sweet } from "../../../models/Sweet"
 import { List } from "../../../api/components/list/List"
+import { Category } from "../../../models/Category"
+import { useFetch } from "../../../api/hooks/useFetch"
+import { URLS } from "../../../constants/urls"
 import { AdditionalImages } from "./AdditionalImages"
 
 const initialSweet: Sweet = {
@@ -15,11 +18,12 @@ const initialSweet: Sweet = {
 }
 export const AddSweet = () => {
     const [onChange, { name, price, description }, _] = useForm(initialSweet);
-    // const [categories, setCategories] = useFetch();
-    const categories: [] = [];
+    const categories = useFetch<Category[]>(URLS.FIND_ALL_CATEGORIES);
+    console.log({ categories });
     const [categoriesIds, setCategoriesIds] = useState<string[]>([]);
     const [__, setMainImage] = useState<File>();
-    const [images, setImages] = useState<File[]>([]);
+    const [images, setImages] = useState<(File | undefined)[]>([]);
+
     const addSweet = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
     }
@@ -54,7 +58,7 @@ export const AddSweet = () => {
                 </section>
 
                 <List.SelectMultiple
-                    label="Categorias:" list={categories}
+                    label="Categorias:" list={categories?.map?.(({ id, name }) => ({ text: name, value: id }))}
                     placeholder="Elija las categorias del postre"
                     values={categoriesIds}
                     setValues={setCategoriesIds}
@@ -70,7 +74,6 @@ export const AddSweet = () => {
                     onChange={onChange}
                     classNameField="add-sweet_input"
                 />
-
                 <AdditionalImages images={images} setImages={setImages} />
             </Form.Lg>
         </Container>

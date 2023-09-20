@@ -15,7 +15,7 @@
 
 .additional-images {
     text-align: center;
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
 }
 .additional-images-form{
@@ -24,6 +24,9 @@
 .additional-images-form-add{
     text-decoration: underline;
     cursor: pointer;
+    display: block;
+    float:right;
+    margin-right: 20px;
     color: var(--main);
 }
 .row {

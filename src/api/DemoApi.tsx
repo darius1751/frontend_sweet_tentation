@@ -7,8 +7,6 @@ export const DemoApi = () => {
             <Routes>
                 <Route path="/" Component={IndexDemo}/>
             </Routes>
-        </HashRouter>
-        
-
+        </HashRouter>      
     )
 }

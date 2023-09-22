@@ -1,26 +1,33 @@
-import { useState, MouseEvent, useEffect } from "react";
+import { MouseEvent } from "react";
 import { Input } from "../../../api/components/inputs/Input";
 
 export type PropsAdditionalImages = {
-    images: (File | undefined)[];
-    setImages: React.Dispatch<React.SetStateAction<(File | undefined)[]>>;
+    cantImages: number;
+    setCantImages: React.Dispatch<React.SetStateAction<number>>;
+    image1: File | undefined;
+    setImage1: React.Dispatch<React.SetStateAction<File | undefined>>
+    image2: File | undefined;
+    setImage2: React.Dispatch<React.SetStateAction<File | undefined>>
+    image3: File | undefined;
+    setImage3: React.Dispatch<React.SetStateAction<File | undefined>>
+    image4: File | undefined;
+    setImage4: React.Dispatch<React.SetStateAction<File | undefined>>
 }
 const MAX_IMAGES: number = 4;
-export const AdditionalImages = ({ setImages }: PropsAdditionalImages) => {
-    const [image1, setImage1] = useState<File>();
-    const [image2, setImage2] = useState<File>();
-    const [image3, setImage3] = useState<File>();
-    const [image4, setImage4] = useState<File>();
-    const [cantImages, setCantImages] = useState<number>(0);
-    const [inputsImages, _] = useState<React.JSX.Element[]>([
-        <Input.Image name="image2" setFile={setImage2} />,
-        <Input.Image name="image3" setFile={setImage3} />,
-        <Input.Image name="image4" setFile={setImage4} />,
-    ]);
-    useEffect(() => {
-        setImages([image1, image2, image3, image4]);
-    }, []);
+export const AdditionalImages = ({ image1, setImage1, image2, setImage2, image3, setImage3, image4, setImage4, cantImages, setCantImages }: PropsAdditionalImages) => {
+    const inputsImages = [
+        <Input.Image name="image2" file={image2} setFile={setImage2} />,
+        <Input.Image name="image3" file={image3} setFile={setImage3} />,
+        <Input.Image name="image4" file={image4} setFile={setImage4} />,
+    ];
 
+    // const reset = () => {
+    //     setImage1(undefined);
+    //     setImage2(undefined);
+    //     setImage3(undefined);
+    //     setImage4(undefined);
+    //     setCantImages(0);
+    // }
     const addImage = (e: MouseEvent<HTMLElement>) => {
         e.preventDefault();
         if (cantImages < 3)
@@ -50,7 +57,7 @@ export const AdditionalImages = ({ setImages }: PropsAdditionalImages) => {
                 </strong>
                 <br />
                 <br />
-                <Input.Image name="image1" setFile={setImage1} />
+                <Input.Image name="image1" file={image1} setFile={setImage1} />
                 <br />
                 <br />
                 {

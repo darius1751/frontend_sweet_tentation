@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import { NavBar } from "../../api/components/nav_bar/NavBar";
 import logo from '../../assets/Logo.png';
-export const DashboardOutlet = () => {
+export const NavigateProfileOutlet = () => {
     return (
         <div>
             <NavBar.Horizontal
